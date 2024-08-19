@@ -1,0 +1,22 @@
+const express = require('express')
+const {loginUser, signupUser, logoutUser} = require ('../controllers/userController')
+
+
+//create instance of router
+const router = express.Router()
+
+
+//create handler
+//router.get('/', () => {})
+
+    //these are handlers for all our routes to simplyfy and clear code, we separate db logic from our route
+
+//login
+router.post('/login', loginUser)
+
+//signup
+router.post('/signupUser', signupUser)
+
+router.post('/logoutUser', logoutUser)
+
+module.exports = router
