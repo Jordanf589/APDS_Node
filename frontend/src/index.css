@@ -49,3 +49,46 @@ border-radius: 8px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 background: #ffffff;
 }
+.book-details span{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    color: #000;
+}
+
+/* bookform */
+h3{
+    color: var(--primary);
+}
+label, input{
+    display: block;
+}
+input{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100psx;
+    border: 1px soldid #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+}
+form button{
+    background: var(--primary);
+    border: 0;
+    color: #ffffff;
+    padding: 10px;
+    font-family: 'Lora', 'serif';
+    border-radius: 4px;
+    cursor: pointer;
+}
+div.error{
+    padding: 10px;
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius: 4px;
+    margin: 20px 0;
+}

@@ -1,7 +1,7 @@
 const User = require('../models/userModel')
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken') //npm install jsonwebtoken
-const brute = require('express-brute')//npm install express-brute
+const expressBrute = require('express-brute')//npm install express-brute
 
 const createToken = (_id) => {
     jwt.sign({_id}, process.env.SECRET_KEY, {expiresIn: '3d'})

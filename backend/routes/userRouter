@@ -1,4 +1,5 @@
 const express = require('express')
+
 const {loginUser, signupUser, logoutUser} = require ('../controllers/userController')
 
 
@@ -6,13 +7,18 @@ const {loginUser, signupUser, logoutUser} = require ('../controllers/userControl
 const router = express.Router()
 
 
-//create handler
-//router.get('/', () => {})
-
-    //these are handlers for all our routes to simplyfy and clear code, we separate db logic from our route
+//bruteforce attacks prevention
+const expressBrute = require('express-brute') //npm install express-brute
+const store = new expressBrute.MemoryStore();
+const bruteForce = new expressBrute(store, {
+    freeRetries: 5,
+    minWait: 1000 *60,
+    maxWait: 1000 * 60 * 10,
+    lifetime: 1000 * 60 * 10,
+});
 
 //login
-router.post('/login', loginUser)
+router.post('/login', bruteForce.prevent, loginUser)
 
 //signup
 router.post('/signupUser', signupUser)
