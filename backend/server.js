@@ -4,6 +4,9 @@ const bookRoutes = require('./routes/books')
 const userRouter = require('./routes/userRouter')
 const mongoose = require('mongoose')
 require('dotenv').config()
+const https = require('https')
+const path = require('path')
+const fs = require('fs')
 
 //creating express package
 const app = express()
@@ -26,10 +29,15 @@ app.use((req, res, next) => {
     next()
 })
 
+const sslServer = https.createServer({
+    key: '',
+    cert: ''
+}, app)
+
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
     //listening for request
-app.listen(process.env.PORT, () => {
+sslServer.listen(process.env.PORT, () => {
     console.log('Connected successfully on port 3000')
 })
 
