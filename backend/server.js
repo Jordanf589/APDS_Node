@@ -7,8 +7,8 @@ require('dotenv').config()
 const https = require('https')
 const path = require('path')
 const fs = require('fs')
-const csrf = require('csurf')
-const cookieParser = require('cookie-parser')
+//const csrf = require('csurf')
+//const cookieParser = require('cookie-parser')
 
 //creating express app
 const app = express()
@@ -20,28 +20,28 @@ const app = express()
 
 //middleware
 app.use(express.json());
-app.use(cookieParser())
+//app.use(cookieParser())
 
 //setup csrf middleware
-app.use(csrf({
-    cookie:{
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'Lax',
-    }
-}))
+// app.use(csrf({
+//     cookie:{
+//         httpOnly: true,
+//         secure: process.env.NODE_ENV === 'production',
+//         sameSite: 'Lax',
+//     }
+// }))
 
 //we need to update our api to use CSRF token since we dont have a login yet we create a call
-app.get('/api/csrf-token', (req, res) =>{
-    res.json({csrfToken: req.csrfToken()})
-})
+// app.get('/api/csrf-token', (req, res) =>{
+//     res.json({csrfToken: req.csrfToken()})
+// })
 
-//middleware to expose CSRF token in response 
-app.use((req, res, next) => {
-    res.locals.csrfToken = req.csrfToken()
-    console.log(req.path, req.method)
-    next()
-})
+// //middleware to expose CSRF token in response 
+// app.use((req, res, next) => {
+//     res.locals.csrfToken = req.csrfToken()
+//     console.log(req.path, req.method)
+//     next()
+// })
 
 //getting the route handler
 app.use('/api/books', bookRoutes)
