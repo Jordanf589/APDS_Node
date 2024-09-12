@@ -49,15 +49,39 @@ border-radius: 8px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 background: #ffffff;
 }
-.book-details span{
+/* homepage */
+.home {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 100px;
+  }
+  .book-details {
+    background: #fff;
+    border-radius: 4px;
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  }
+  .book-details h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: var(--primary);
+  }
+  .book-details p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+  .book-details span {
     position: absolute;
     top: 20px;
     right: 20px;
     cursor: pointer;
     padding: 6px;
     border-radius: 50%;
-    color: #000;
-}
+    color: #000000;
+  }
 
 /* bookform */
 h3{

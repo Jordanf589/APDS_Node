@@ -17,18 +17,6 @@ const Home = () =>{
         fetchBooks()
     }, [dispatch])
 
-    //deleting a book
-    // const deleteBook = async(id) =>{
-    //     const response = await fetch('/api/books/' + id, {
-    //         method: 'DELETE'
-
-    //     })
-    //     //const json = await response.json()
-    //     if(response.ok){
-    //         setBooks(books.filter(book => book._id !== id))
-    //     }
-    // }
-
     return (
         <div className ="Home">
             <div className="books">
