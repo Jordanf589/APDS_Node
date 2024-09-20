@@ -24,7 +24,6 @@ return(
         <h2>{book.title}</h2>
         <p><strong>Author: </strong>{book.author}</p>
         <p><strong>Quantity: </strong>{book.quantity}</p>
-        <p>{formatDistanceToNow(new Date(book.createdAt), {addSuffix: true})}</p>
         <span onClick={handleClick}>Delete</span> 
     </div>
 

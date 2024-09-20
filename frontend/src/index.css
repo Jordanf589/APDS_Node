@@ -134,3 +134,13 @@ form.login {
   margin: 40px auto;
   padding: 20px;
 }
+
+nav button{
+  background: #fff;
+  border: 0;
+  color: var(--primary);
+  padding: 6px 10px;
+  font-family: 'Lora', 'serif';
+  border-radius: 4px;
+  cursor: pointer;
+}
